@@ -13,7 +13,8 @@ export class HeaderComponent implements OnInit {
   socialLinks = {
     facebook: 'https://www.facebook.com/YassirKHL',
     github: 'https://github.com/khaldi-yass',
-    linkedIn: 'https://www.linkedin.com/in/khaldiyassir/'
+    linkedIn: 'https://www.linkedin.com/in/khaldiyassir',
+    gmail: 'mailto:khaldi.yass@gmail.com'
   };
 
   ngOnInit(): void {
