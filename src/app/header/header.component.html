@@ -1,14 +1,20 @@
 <div class="container-fluid bg-light sticky-top">
   <div class="row">
-    <div class="col-md-4 offset-4 lead">
-      <div class="text-center">
-        <span class="mr-3">Contact Me:</span>
+    <div class="col-md-12 d-flex justify-content-between">
+      <div class="lead">
+        <span class="mr-3 d-none d-sm-inline">Contact Me:</span>
         <span>
-          <a [href]="socialLinks.facebook"><i class="fab fa-facebook-square mr-3"></i></a>
-          <a [href]="socialLinks.github"><i class="fab fa-github-square mr-3"></i></a>
-          <a [href]="socialLinks.linkedIn"><i class="fab fa-linkedin mr-3"></i></a>
-          <a [href]="socialLinks.gmail"><i class="fas fa-envelope-square"></i></a>
+          <a [href]="socialLinks.facebook" target="_blank"><i class="fab fa-facebook-square mr-3"></i></a>
+          <a [href]="socialLinks.github" target="_blank"><i class="fab fa-github-square mr-3"></i></a>
+          <a [href]="socialLinks.linkedIn" target="_blank"><i class="fab fa-linkedin mr-3"></i></a>
+          <a [href]="socialLinks.gmail" target="_blank"><i class="fas fa-envelope-square"></i></a>
         </span>
+      </div>
+      <div class="text-right lead">
+        <a [href]="socialLinks.blogSource" class="mr-2 align-middle" target="_blank">
+          <span class="mr-2 d-none d-sm-inline">Source Code</span>
+          <i class="fab fa-github"></i>
+        </a>
       </div>
     </div>
   </div>

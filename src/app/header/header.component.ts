@@ -14,7 +14,8 @@ export class HeaderComponent implements OnInit {
     facebook: 'https://www.facebook.com/YassirKHL',
     github: 'https://github.com/khaldi-yass',
     linkedIn: 'https://www.linkedin.com/in/khaldiyassir',
-    gmail: 'mailto:khaldi.yass@gmail.com'
+    gmail: 'mailto:khaldi.yass@gmail.com',
+    blogSource: 'https://github.com/ky-pages/ky-pages.github.io'
   };
 
   ngOnInit(): void {
