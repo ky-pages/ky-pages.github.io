@@ -4,6 +4,9 @@
   display         : inline-block;
   background      : url('../assets/images/UC.png') no-repeat center;
   background-size : contain;
+  -webkit-transition      : background-image .25s ease-in-out;
+  -moz-transition      : background-image .25s ease-in-out;
+  -o-transition      : background-image .25s ease-in-out;
   transition      : background-image .25s ease-in-out;
 }
 
