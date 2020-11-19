@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
+
+  socialLinks = {
+    facebook: 'https://www.facebook.com/YassirKHL',
+    github: 'https://github.com/khaldi-yass',
+    linkedIn: 'https://www.linkedin.com/in/khaldiyassir/'
+  };
 
   ngOnInit(): void {
   }
