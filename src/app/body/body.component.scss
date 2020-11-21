@@ -21,7 +21,16 @@
 }
 
 .content {
-  height   : 100%;
+  height     : 100%;
   overflow-y : auto;
   overflow-x : hidden;
+}
+
+.post-thumbnail {
+  height           : 200px;
+  background-color : #8b8b8b;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
