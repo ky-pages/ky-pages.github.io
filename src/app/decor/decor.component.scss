@@ -1,0 +1,21 @@
+.obj1 {
+  position  : fixed;
+  max-width : 250px;
+  top       : 40%;
+}
+
+.obj2 {
+  position  : fixed;
+  max-width : 200px;
+  bottom    : -12rem;
+  right     : 2rem;
+  transform : rotate(30deg);
+}
+
+.obj3 {
+  position  : fixed;
+  max-width : 250px;
+  top       : -5rem;
+  right     : -3rem;
+  transform : rotate(90deg);
+}

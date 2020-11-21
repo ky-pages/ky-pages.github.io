@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-body',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
+
+  posts = ['Post 1', 'Post 2', 'Post 3', 'Post 4'];
 
   ngOnInit(): void {
   }

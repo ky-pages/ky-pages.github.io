@@ -1,11 +1,26 @@
-<div class="container text-center mt-5 desk">
-  <h1>KY-Pages</h1>
-  <h2>The Journey Of A Career</h2>
+<div class="text-center content scrollbar-primary py-5">
+  <h2>KY-Pages - The Journey Of A Career</h2>
   <div class="row mt-5">
     <div class="col-md-12">
       <div class="uc"></div>
       <div class="uc2_loader"></div>
       <p class="lead">Website Under Construction</p>
+      <ng-container *ngFor="let post of posts; let i = index"
+                    [ngTemplateOutlet]="postThumbnail" [ngTemplateOutletContext]="{post:post}"></ng-container>
     </div>
   </div>
 </div>
+
+
+<!--Post thumbnail-->
+<ng-template #postThumbnail let-post="post">
+  <div class="d-inline-block" style="width: 18rem;">
+    <img class="card-img-top" src="../../assets/images/Coffee.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{post}}</h5>
+    </div>
+  </div>
+</ng-template>
+
+
+
