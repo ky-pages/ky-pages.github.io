@@ -10,7 +10,11 @@ export class BodyComponent implements OnInit {
   constructor() {
   }
 
-  posts = ['Post 1', 'Post 2', 'Post 3', 'Post 4', 'Post 1', 'Post 2', 'Post 3', 'Post 4', 'Post 1', 'Post 2'];
+  posts = [{title: 'Post 1', image: '../../assets/images/thumbnail.jpg'},
+    {title: 'Post 2', image: '../../assets/images/thumbnail.jpg'},
+    {title: 'Post 3', image: '../../assets/images/thumbnail.jpg'},
+    {title: 'Post 4', image: '../../assets/images/thumbnail.jpg'},
+    {title: 'Post 5', image: '../../assets/images/thumbnail.jpg'}];
 
   ngOnInit(): void {
   }

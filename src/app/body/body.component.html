@@ -1,5 +1,6 @@
-<div class="text-center content scrollbar-primary py-5">
+<div class="text-center blog-container scrollbar-primary py-5">
   <h2>KY-Pages - The Journey Of A Career</h2>
+
   <div class="row mt-5">
     <div class="col-md-12">
       <div class="uc"></div>
@@ -7,22 +8,26 @@
       <p class="lead">Website Under Construction</p>
     </div>
   </div>
+
   <div class="row m-3 text-center">
     <div class="col-md-12">
       <h1>Blog posts</h1>
     </div>
     <ng-container *ngFor="let post of posts; let i = index"
-                  [ngTemplateOutlet]="postThumbnail" [ngTemplateOutletContext]="{post:post}"></ng-container>
+                  [ngTemplateOutlet]="postThumbnail"
+                  [ngTemplateOutletContext]="{post:post}">
+    </ng-container>
   </div>
 </div>
 
 
 <!--Post thumbnail-->
 <ng-template #postThumbnail let-post="post">
-  <div class="col-md-3 p-1">
-    <div class="post-thumbnail">
-      {{post}}
-    </div>
+  <div class="col-md-4 p-2">
+    <a href="#" class="post-thumbnail-container d-flex align-content-stretch flex-wrap rounded-lg">
+      <div class="thumbnail-pic" [ngStyle]="{'background-image': ' url(' + post.image + ')'}"></div>
+      <div class="thumbnail-title lead">{{post.title}}</div>
+    </a>
   </div>
 </ng-template>
 

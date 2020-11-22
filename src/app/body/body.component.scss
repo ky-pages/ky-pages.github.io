@@ -1,13 +1,17 @@
 .uc {
-  width              : 40vw;
-  height             : 40vh;
-  display            : inline-block;
-  background         : url('../../assets/images/UC.png') no-repeat center;
-  background-size    : contain;
-  -webkit-transition : background-image .25s ease-in-out;
-  -moz-transition    : background-image .25s ease-in-out;
-  -o-transition      : background-image .25s ease-in-out;
-  transition         : background-image .25s ease-in-out;
+  width               : 40vw;
+  height              : 40vh;
+  display             : inline-block;
+  background-repeat   : no-repeat;
+  background-position : center;
+  background-image    : url('../../assets/images/UC.png');
+  background-size     : contain;
+  transition          : background-image .25s ease-in-out;
+
+  &:hover, &:active {
+    background      : url('../../assets/images/UC2.png') no-repeat center;
+    background-size : contain;
+  }
 }
 
 .uc2_loader {
@@ -15,22 +19,43 @@
   display    : none;
 }
 
-.uc:hover, .uc:active {
-  background      : url('../../assets/images/UC2.png') no-repeat center;
-  background-size : contain;
-}
-
-.content {
+.blog-container {
   height     : 100%;
   overflow-y : auto;
   overflow-x : hidden;
 }
 
-.post-thumbnail {
-  height           : 200px;
-  background-color : #8b8b8b;
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.post-thumbnail-container {
+  height          : 20rem;
+  color           : inherit;
+  transition      : all .2s ease-in-out;
+  overflow        : hidden;
+  text-decoration : none;
+  box-shadow      : .3rem .3rem .4rem .1rem rgba(0, 0, 0, 0.2) !important;
+
+  &:hover, &:active {
+    box-shadow : .6rem .6rem .5rem .4rem rgba(0, 0, 0, 0.2) !important;
+  }
+}
+
+.thumbnail-pic {
+  height              : 75%;
+  width               : 100%;
+  background-repeat   : no-repeat;
+  background-position : center;
+  background-size     : 110%;
+  transition          : all .2s ease-in-out;
+
+  &:hover, &:active {
+    background-size : 105%;
+  }
+
+}
+
+.thumbnail-title {
+  height          : 25%;
+  width           : 100%;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
 }

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Raleway:wght@600&display=swap');
 @import 'assets/styles/mixin';
+@import 'assets/styles/ripple-directive';
 
 @include blog-scrollbar(primary, #bbbbbb, #F5F5F5); //scrollbar-primary
 

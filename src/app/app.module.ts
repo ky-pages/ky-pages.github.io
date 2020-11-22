@@ -3,10 +3,11 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { BodyComponent } from './body/body.component';
-import { DecorComponent } from './decor/decor.component';
+import {HeaderComponent} from './header/header.component';
+import {FooterComponent} from './footer/footer.component';
+import {BodyComponent} from './body/body.component';
+import {DecorComponent} from './decor/decor.component';
+import {RippleDirective} from './shared/ripple.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DecorComponent } from './decor/decor.component';
     HeaderComponent,
     FooterComponent,
     BodyComponent,
-    DecorComponent
+    DecorComponent,
+    RippleDirective
   ],
   imports: [
     BrowserModule,
