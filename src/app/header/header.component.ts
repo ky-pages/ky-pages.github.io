@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Renderer2} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +7,10 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() {
+  constructor(private renderer: Renderer2) {
   }
+
+  private menuHidden = true;
 
   socialLinks = {
     facebook: 'https://www.facebook.com/YassirKHL',
@@ -21,4 +23,16 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  toggleMenu(rowMenu: HTMLDivElement, toggle: HTMLDivElement): void {
+    console.log(toggle);
+    if (this.menuHidden) {
+      this.renderer.removeClass(rowMenu, 'hideMenu');
+      this.renderer.addClass(toggle, 'toggled');
+    } else {
+      this.renderer.addClass(rowMenu, 'hideMenu');
+      this.renderer.removeClass(toggle, 'toggled');
+    }
+    this.menuHidden = !this.menuHidden;
+  }
 }

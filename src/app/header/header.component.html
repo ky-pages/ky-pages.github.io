@@ -1,21 +1,35 @@
-<div class="container sticky-top contact bg-light">
-  <div class="row">
-    <div class="col-md-12 d-flex justify-content-between lead">
-      <div class="">
-        <span class="mr-3 d-none d-sm-inline">Contact Me:</span>
-        <span>
-          <a [href]="socialLinks.facebook" target="_blank"><i class="fab fa-facebook-square mr-3"></i></a>
-          <a [href]="socialLinks.github" target="_blank"><i class="fab fa-github-square mr-3"></i></a>
-          <a [href]="socialLinks.linkedIn" target="_blank"><i class="fab fa-linkedin mr-3"></i></a>
+<div class="container-fluid contact">
+
+  <div class="row menu hideMenu scrollbar-primary" #rowMenu>
+    <div style="height: 100px" class="col-12 my-3 "></div>
+    <div style="height: 100px" class="col-12 my-3 "></div>
+    <div style="height: 100px" class="col-12 my-3 "></div>
+  </div>
+
+  <div class="row lead bg-light">
+
+    <div class="col-4 p-0 px-2">
+      <span class="mr-2 d-none d-sm-inline">Contact:</span>
+      <span>
+          <a [href]="socialLinks.facebook" target="_blank"><i class="fab fa-facebook-square mr-2"></i></a>
+          <a [href]="socialLinks.github" target="_blank"><i class="fab fa-github-square mr-2"></i></a>
+          <a [href]="socialLinks.linkedIn" target="_blank"><i class="fab fa-linkedin mr-2"></i></a>
           <a [href]="socialLinks.gmail" target="_blank"><i class="fas fa-envelope-square"></i></a>
         </span>
-      </div>
-      <div class="text-right">
-        <a [href]="socialLinks.blogSource" class="mr-2 align-middle" target="_blank">
-          <span class="mr-2 d-none d-sm-inline">Source Code</span>
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
     </div>
+
+    <div class="text-center col-4 p-0 px-2 menuToggle" #toggle>
+      <a disabled="disabled" class="mr-2 align-middle m-pointer" (click)="toggleMenu(rowMenu,toggle)">
+        <i class="fas fa-chevron-circle-down"></i>
+      </a>
+    </div>
+
+    <div class="text-right col-4 p-0 px-2">
+      <a [href]="socialLinks.blogSource" class="mr-2 align-middle" target="_blank">
+        <span class="mr-2 d-none d-sm-inline">Source:</span>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+
   </div>
 </div>

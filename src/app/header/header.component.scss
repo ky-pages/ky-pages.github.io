@@ -1,3 +1,33 @@
 .contact {
-  box-shadow       : 0 .5rem .6rem -.1rem rgba(0, 0, 0, 0.4) !important;
+  box-shadow : 0 .5rem .6rem -.1rem rgba(0, 0, 0, 0.4) !important;
+  top        : 0;
+  position   : absolute;
+  z-index    : 1000;
+}
+
+.m-pointer {
+  cursor : pointer;
+}
+
+.menu {
+  background-color : rgba(222, 222, 222, 0.9);
+  overflow         : hidden;
+  max-height       : 80vh;
+  transition       : all .8s ease-out;
+
+  &.hideMenu {
+    max-height : 0;
+    transition : all .8s cubic-bezier(0, 1, 0, 1);
+
+  }
+}
+
+.menuToggle {
+  transform  : rotate(0);
+  transition : transform .5s ease-out;
+
+  &.toggled {
+    transform  : rotate(180deg);
+    transition : transform .5s ease-out;
+  }
 }
