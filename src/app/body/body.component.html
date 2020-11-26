@@ -6,19 +6,25 @@
 
   <div class="row">
     <div class="col-md-12">
-      <div class="uc"></div>
-      <div class="uc2_loader"></div>
-      <p class="lead">Website Under Construction</p>
+      <div>
+        <div class="hvr-pulse">
+          <div class="uc"></div>
+          <div class="uc2_loader"></div>
+        </div>
+      </div>
+      <div>
+        <p class="lead hvr-buzz-out">Website Under Construction</p>
+      </div>
     </div>
   </div>
 
   <hr>
 
-  <div class="row px-3 py-5 text-center">
+  <div class="row px-3 py-5 text-center" appInfiniteScroll [scrollEndCallBack]="feedPosts.bind(this)">
     <div class="col-md-12">
       <h1>Blog posts</h1>
     </div>
-    <ng-container *ngFor="let post of posts; let i = index"
+    <ng-container *ngFor="let post of blogPosts; let i = index"
                   [ngTemplateOutlet]="postThumbnail"
                   [ngTemplateOutletContext]="{post:post}">
     </ng-container>
@@ -30,8 +36,8 @@
 <!--Post thumbnail-->
 <ng-template #postThumbnail let-post="post">
   <div class="col-md-4 p-2">
-    <a href="#" class="post-thumbnail-container d-flex align-content-stretch flex-wrap rounded-lg">
-      <div class="thumbnail-pic" [ngStyle]="{'background-image': ' url(' + post.image + ')'}"></div>
+    <a [href]="post.link" class="post-thumbnail-container d-flex align-content-stretch flex-wrap rounded-lg">
+      <div class="thumbnail-pic" [ngStyle]="{'background-image': ' url(' + post.thumbnailUrl + ')'}"></div>
       <div class="thumbnail-title lead">{{post.title}}</div>
     </a>
   </div>

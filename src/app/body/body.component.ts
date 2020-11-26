@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {LocalRepositoryService} from '../shared/services/local-repository.service';
+import {PostModel} from '../shared/models/post.model';
 
 @Component({
   selector: 'app-body',
@@ -7,16 +9,33 @@ import {Component, OnInit} from '@angular/core';
 })
 export class BodyComponent implements OnInit {
 
-  constructor() {
-  }
+  public blogPosts: PostModel[] = [];
+  private sliceFrom = 0;
+  private step = 9;
 
-  posts = [{title: 'Post 1', image: '../../assets/images/thumbnail.jpg'},
-    {title: 'Post 2', image: '../../assets/images/thumbnail.jpg'},
-    {title: 'Post 3', image: '../../assets/images/thumbnail.jpg'},
-    {title: 'Post 4', image: '../../assets/images/thumbnail.jpg'},
-    {title: 'Post 5', image: '../../assets/images/thumbnail.jpg'}];
+  constructor(private localRepo: LocalRepositoryService) {
+  }
 
   ngOnInit(): void {
+    this.feedPosts();
   }
 
+  public feedPosts(): void {
+    console.log('feeding', this.blogPosts);
+    this.blogPosts = this.blogPosts.concat(this.getNextPosts());
+    console.log(this.blogPosts);
+  }
+
+  private getNextPosts(): PostModel[] {
+    let posts: PostModel[];
+    const sliceTo = this.sliceFrom + this.step;
+    if (this.sliceFrom < this.localRepo.getPostRepo().length) {
+      posts = this.localRepo.getPostRepo().slice(this.sliceFrom, sliceTo);
+      console.log('posts: ', this.sliceFrom, sliceTo);
+    } else {
+      posts = [];
+    }
+    this.sliceFrom = sliceTo;
+    return posts;
+  }
 }

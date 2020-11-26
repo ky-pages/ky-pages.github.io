@@ -1,4 +1,5 @@
 import {Component, OnInit, Renderer2} from '@angular/core';
+import {LocalRepositoryService} from '../shared/services/local-repository.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import {Component, OnInit, Renderer2} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private renderer: Renderer2) {
+  constructor(private renderer: Renderer2, private localRepo: LocalRepositoryService) {
   }
 
   private menuHidden = true;

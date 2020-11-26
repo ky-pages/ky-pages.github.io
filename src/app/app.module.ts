@@ -7,7 +7,8 @@ import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {BodyComponent} from './body/body.component';
 import {DecorComponent} from './decor/decor.component';
-import {RippleDirective} from './shared/ripple.directive';
+import {RippleDirective} from './shared/directives/ripple.directive';
+import { InfiniteScrollDirective } from './shared/directives/infinite-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {RippleDirective} from './shared/ripple.directive';
     FooterComponent,
     BodyComponent,
     DecorComponent,
-    RippleDirective
+    RippleDirective,
+    InfiniteScrollDirective
   ],
   imports: [
     BrowserModule,

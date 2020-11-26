@@ -31,10 +31,10 @@
   transition      : all .2s ease-in-out;
   overflow        : hidden;
   text-decoration : none;
-  box-shadow      : .3rem .3rem .4rem .1rem rgba(0, 0, 0, 0.2) !important;
+  box-shadow      : .1rem .1rem .2rem .1rem rgba(0, 0, 0, 0.2) !important;
 
   &:hover, &:active {
-    box-shadow : .6rem .6rem .5rem .4rem rgba(0, 0, 0, 0.2) !important;
+    box-shadow : .2rem .2rem .2rem .1rem rgba(0, 0, 0, 0.2) !important;
   }
 }
 
@@ -43,11 +43,11 @@
   width               : 100%;
   background-repeat   : no-repeat;
   background-position : center;
-  background-size     : 110%;
-  transition          : all .2s ease-in-out;
+  background-size     : 120%;
+  transition          : all .3s ease-in-out;
 
   &:hover, &:active {
-    background-size : 105%;
+    background-size : 115%;
   }
 
 }
