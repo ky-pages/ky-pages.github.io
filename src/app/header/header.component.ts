@@ -1,5 +1,6 @@
 import {Component, OnInit, Renderer2} from '@angular/core';
 import {LocalRepositoryService} from '../shared/services/local-repository.service';
+import {SearchSuggestionModel} from '../shared/models/header-menu.model';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,7 @@ export class HeaderComponent implements OnInit {
   }
 
   private menuHidden = true;
+  public searchSuggestions: SearchSuggestionModel[] = [];
 
   socialLinks = {
     facebook: 'https://www.facebook.com/YassirKHL',
@@ -22,11 +24,15 @@ export class HeaderComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    this.searchSuggestions.push(new SearchSuggestionModel('Suggestion', '#'));
+    this.searchSuggestions.push(new SearchSuggestionModel('Suggestion', '#'));
+    this.searchSuggestions.push(new SearchSuggestionModel('Suggestion', '#'));
+    this.searchSuggestions.push(new SearchSuggestionModel('Suggestion', '#'));
+    this.searchSuggestions.push(new SearchSuggestionModel('Suggestion', '#'));
   }
 
 
   toggleMenu(rowMenu: HTMLDivElement, toggle: HTMLDivElement): void {
-    console.log(toggle);
     if (this.menuHidden) {
       this.renderer.removeClass(rowMenu, 'hideMenu');
       this.renderer.addClass(toggle, 'toggled');
@@ -35,5 +41,9 @@ export class HeaderComponent implements OnInit {
       this.renderer.removeClass(toggle, 'toggled');
     }
     this.menuHidden = !this.menuHidden;
+  }
+
+  searchFocus(suggestions: HTMLDivElement, show: boolean): void {
+    show ? this.renderer.addClass(suggestions, 'active') : this.renderer.removeClass(suggestions, 'active');
   }
 }

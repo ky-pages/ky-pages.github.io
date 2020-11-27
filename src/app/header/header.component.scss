@@ -10,7 +10,7 @@
 }
 
 .menu {
-  background-color : rgba(222, 222, 222, 0.9);
+  background-color : rgb(222, 222, 222);
   overflow         : hidden;
   max-height       : 80vh;
   transition       : all .8s ease-in;
@@ -34,4 +34,94 @@
 
 .topic-title {
   font-weight : 800;
+}
+
+.logo {
+  height : 2.6rem;
+}
+
+.has-feedback {
+  position : relative;
+}
+
+.form-control-feedback {
+  position   : absolute;
+  top        : .8rem;
+  right      : 2rem;
+  z-index    : 2;
+  display    : block;
+  text-align : center;
+  cursor     : pointer;
+  transition : filter .2s ease-out;
+
+  &:hover {
+    filter : drop-shadow(0 0 2px #80bdff);
+  }
+}
+
+.search-panel {
+  position : relative;
+}
+
+.search {
+  height        : 1.5rem;
+  border-radius : 2rem;
+  width         : 60%;
+  transition    : width .2s ease-out;
+  display       : inline-block;
+  text-align    : center;
+  z-index       : 1002;
+  position      : absolute;
+  left          : 0;
+  right         : 0;
+  margin        : auto;
+  top           : .5rem;
+
+  &:focus {
+    width         : 100%;
+    outline-style : none;
+    outline-color : transparent;
+    border-color  : transparent;
+    box-shadow    : 0 0 .5rem 0 rgba(0, 0, 0, 0.4) !important;
+  }
+}
+
+.suggestions {
+  min-height       : 2rem;
+  background-color : white;
+  z-index          : 1001;
+  position         : absolute;
+  left             : 0;
+  right            : 0;
+  margin           : auto;
+  top              : 2.2rem;
+  border-radius    : .5rem;
+  width            : 47%;
+  transition       : opacity .5s ease-out;
+  opacity          : 0;
+  text-align       : center;
+  padding-top      : 1.5rem;
+  padding-bottom   : 1rem;
+  visibility       : hidden;
+  box-shadow       : 0 .2rem .3rem -.1rem rgba(0, 0, 0, 0.4) !important;
+
+  &.active {
+    opacity    : 1;
+    transition : opacity .6s ease-out;
+    visibility : visible;
+  }
+}
+
+.suggestion {
+  cursor          : pointer;
+  padding         : .5rem 1rem;
+  margin          : auto;
+  width           : 100%;
+  display         : inline-block;
+  border-radius   : .6rem;
+  text-decoration : none;
+
+  &:hover {
+    background-color : #d7d7d7;
+  }
 }

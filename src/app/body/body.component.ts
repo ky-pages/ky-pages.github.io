@@ -21,9 +21,7 @@ export class BodyComponent implements OnInit {
   }
 
   public feedPosts(): void {
-    console.log('feeding', this.blogPosts);
     this.blogPosts = this.blogPosts.concat(this.getNextPosts());
-    console.log(this.blogPosts);
   }
 
   private getNextPosts(): PostModel[] {
@@ -31,7 +29,6 @@ export class BodyComponent implements OnInit {
     const sliceTo = this.sliceFrom + this.step;
     if (this.sliceFrom < this.localRepo.getPostRepo().length) {
       posts = this.localRepo.getPostRepo().slice(this.sliceFrom, sliceTo);
-      console.log('posts: ', this.sliceFrom, sliceTo);
     } else {
       posts = [];
     }

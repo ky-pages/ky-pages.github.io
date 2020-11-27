@@ -1,7 +1,25 @@
 <div class="container-fluid contact">
 
+  <div class="suggestions row" #suggestions>
+    <div class="col-md-12">
+      <small class="text-muted">Suggestions</small>
+    </div>
+    <div class="col-md-12" *ngFor="let suggestion of searchSuggestions;let i=index">
+      <a disabled="disabled" class="suggestion">{{suggestion.title}}</a>
+    </div>
+  </div>
+
   <div class="row menu hideMenu scrollbar-primary" #rowMenu>
-    <div class="col-sm-4 p-2" *ngFor="let number of [0,1,2]">
+
+    <div class="offset-3 col-6 py-3">
+      <div class="form-group col-md-12 m-0 text-center search-panel">
+        <label for="srh"></label>
+        <input id="srh" type="text" class="form-control search" placeholder="Search"
+               (focus)="searchFocus(suggestions,true)" (focusout)="searchFocus(suggestions,false)">
+      </div>
+    </div>
+
+    <div class=" col-sm-4 p-2" *ngFor="let number of [0,1,2]">
       <p class="h5 m-0 ml-5 topic-title">FEATURES</p>
       <hr>
     </div>
