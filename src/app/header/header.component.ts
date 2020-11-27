@@ -1,6 +1,7 @@
 import {Component, OnInit, Renderer2} from '@angular/core';
 import {LocalRepositoryService} from '../shared/services/local-repository.service';
-import {SearchSuggestionModel} from '../shared/models/header-menu.model';
+import {AppService} from '../shared/services/app.service';
+import {PostModel} from '../shared/models/post.model';
 
 @Component({
   selector: 'app-header',
@@ -9,11 +10,13 @@ import {SearchSuggestionModel} from '../shared/models/header-menu.model';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private renderer: Renderer2, private localRepo: LocalRepositoryService) {
+  constructor(private renderer: Renderer2, private localRepo: LocalRepositoryService, private appService: AppService) {
   }
 
   private menuHidden = true;
-  public searchSuggestions: SearchSuggestionModel[] = [];
+  private maxSuggestions = 5;
+  public postSuggestions: PostModel[] = [];
+  public searchedValue = '';
 
   socialLinks = {
     facebook: 'https://www.facebook.com/YassirKHL',
@@ -24,11 +27,6 @@ export class HeaderComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.searchSuggestions.push(new SearchSuggestionModel('Suggestion', '#'));
-    this.searchSuggestions.push(new SearchSuggestionModel('Suggestion', '#'));
-    this.searchSuggestions.push(new SearchSuggestionModel('Suggestion', '#'));
-    this.searchSuggestions.push(new SearchSuggestionModel('Suggestion', '#'));
-    this.searchSuggestions.push(new SearchSuggestionModel('Suggestion', '#'));
   }
 
 
@@ -43,7 +41,23 @@ export class HeaderComponent implements OnInit {
     this.menuHidden = !this.menuHidden;
   }
 
-  searchFocus(suggestions: HTMLDivElement, show: boolean): void {
-    show ? this.renderer.addClass(suggestions, 'active') : this.renderer.removeClass(suggestions, 'active');
+  searchFocus(suggestions: HTMLDivElement, search: HTMLInputElement, show: boolean): void {
+    if (show) {
+      this.renderer.addClass(search, 'active');
+      this.renderer.addClass(suggestions, 'active');
+    } else {
+      setTimeout(() => {
+        this.renderer.removeClass(suggestions, 'active');
+        this.renderer.removeClass(search, 'active');
+      }, 100);
+    }
+
+  }
+
+  suggest(): void {
+    if (this.searchedValue.length > 3) {
+      this.postSuggestions = this.appService.searchInsidePosts(this.searchedValue, this.localRepo.getPostRepo(), this.maxSuggestions);
+      this.postSuggestions.push(new PostModel('Find more results for: ' + this.searchedValue, '', '', ''));
+    }
   }
 }

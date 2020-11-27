@@ -1,3 +1,5 @@
+@import '../../assets/styles/variables';
+
 .contact {
   box-shadow : 0 .2rem .3rem -.1rem rgba(0, 0, 0, 0.4) !important;
   top        : 0;
@@ -64,9 +66,9 @@
 }
 
 .search {
-  height        : 1.5rem;
+  height        : 1.8rem;
   border-radius : 2rem;
-  width         : 60%;
+  width         : 70%;
   transition    : width .2s ease-out;
   display       : inline-block;
   text-align    : center;
@@ -77,7 +79,7 @@
   margin        : auto;
   top           : .5rem;
 
-  &:focus {
+  &.active {
     width         : 100%;
     outline-style : none;
     outline-color : transparent;
@@ -97,7 +99,7 @@
   top              : 2.2rem;
   border-radius    : .5rem;
   width            : 47%;
-  transition       : opacity .5s ease-out;
+  transition       : all .2s ease-out;
   opacity          : 0;
   text-align       : center;
   padding-top      : 1.5rem;
@@ -105,9 +107,13 @@
   visibility       : hidden;
   box-shadow       : 0 .2rem .3rem -.1rem rgba(0, 0, 0, 0.4) !important;
 
+  @media (max-width : ($bp-md - 1)) {
+    width : 93%;
+  }
+
   &.active {
     opacity    : 1;
-    transition : opacity .6s ease-out;
+    transition : all .6s ease-out;
     visibility : visible;
   }
 }
@@ -120,8 +126,17 @@
   display         : inline-block;
   border-radius   : .6rem;
   text-decoration : none;
+  transition      : all .2s ease-in-out;
+  text-overflow   : ellipsis;
+  white-space     : nowrap;
+  overflow        : hidden;
 
   &:hover {
     background-color : #d7d7d7;
+    color            : inherit;
+  }
+
+  &.last {
+    color : #007bff;
   }
 }

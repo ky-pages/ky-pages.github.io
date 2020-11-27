@@ -2,6 +2,7 @@
 
 @import 'assets/styles/mixin';
 @import 'assets/styles/ripple-directive';
+@import 'assets/styles/variables';
 
 @include blog-scrollbar(primary, #bbbbbb, #F5F5F5); //scrollbar-primary
 

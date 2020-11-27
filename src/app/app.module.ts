@@ -9,6 +9,7 @@ import {BodyComponent} from './body/body.component';
 import {DecorComponent} from './decor/decor.component';
 import {RippleDirective} from './shared/directives/ripple.directive';
 import { InfiniteScrollDirective } from './shared/directives/infinite-scroll.directive';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,10 +21,11 @@ import { InfiniteScrollDirective } from './shared/directives/infinite-scroll.dir
     RippleDirective,
     InfiniteScrollDirective
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
